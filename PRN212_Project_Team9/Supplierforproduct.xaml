@@ -1,0 +1,47 @@
+﻿<Window x:Class="PRN212_Project_Team9.Supplierforproduct"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PRN212_Project_Team9"
+        mc:Ignorable="d"
+        Title="Supplierforproduct" Height="450" Width="800">
+    <Grid>
+        <ComboBox x:Name="cbSearchBy" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="SupplierID"/>
+            <ComboBoxItem Content="SupplierName"/>
+            <ComboBoxItem Content="ContactNumber"/>
+            <ComboBoxItem Content="Address"/>
+            <ComboBoxItem Content="Email"/>
+        </ComboBox>
+        <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Margin="140,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="350,10,0,0" VerticalAlignment="Top" Width="60" Click="btnSearch_Click"/>
+        <ListView x:Name="lvSupplier" Margin="0,45,252,10" SelectionChanged="lvSupplier_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" Width="30" DisplayMemberBinding="{Binding Path=SupplierID}"/>
+                    <GridViewColumn Header="SupplierName" Width="100" DisplayMemberBinding="{Binding Path=SupplierName}"/>
+                    <GridViewColumn Header="ContactNumber" Width="100" DisplayMemberBinding="{Binding Path=ContactNumber}"/>
+                    <GridViewColumn Header="Address" Width="140" DisplayMemberBinding="{Binding Path=Address}"/>
+                    <GridViewColumn Header="Email" Width="160" DisplayMemberBinding="{Binding Path=Email}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="Supplier" HorizontalAlignment="Left" Margin="623,10,0,0" VerticalAlignment="Top" Height="36" Width="112" FontSize="20"/>
+        <Label Content="SupplierID" HorizontalAlignment="Left" Margin="608,55,0,0" VerticalAlignment="Top"/>
+        <Label Content="Supplier Name" HorizontalAlignment="Left" Margin="608,104,0,0" VerticalAlignment="Top"/>
+        <Label Content="Contact Number" HorizontalAlignment="Left" Margin="608,153,0,0" VerticalAlignment="Top"/>
+        <Label Content="Address" HorizontalAlignment="Left" Margin="608,192,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.571,-0.384"/>
+        <Label Content="Email" HorizontalAlignment="Left" Margin="608,235,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbSupplierID" HorizontalAlignment="Left" Margin="608,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.338,0.225" IsEnabled="False"/>
+        <TextBox x:Name="tbSupplierName" HorizontalAlignment="Left" Margin="608,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbSupplierCN" HorizontalAlignment="Left" Margin="608,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbSupplierAddress" HorizontalAlignment="Left" Margin="608,218,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbSupplierEmail" HorizontalAlignment="Left" Margin="608,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="Refresh" Content="Refresh" HorizontalAlignment="Left" Margin="565,301,0,0" VerticalAlignment="Top" Click="Refresh_Click"/>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="623,301,0,0" VerticalAlignment="Top" Width="38" Click="Add_Click"/>
+        <Button x:Name="Delete" Content="Delete" HorizontalAlignment="Left" Margin="728,301,0,0" VerticalAlignment="Top" Width="60" Click="Delete_Click"/>
+        <Button Content="Edit" HorizontalAlignment="Left" Margin="679,300,0,0" VerticalAlignment="Top" Height="21" Width="38" Click="Edit_Click"/>
+        <Button x:Name="btnSupplierProduct" Content="Supplier Products" HorizontalAlignment="Left" Margin="577,348,0,0" VerticalAlignment="Top" Width="140" Click="btnSupplierProduct_Click"/>
+    </Grid>
+</Window>

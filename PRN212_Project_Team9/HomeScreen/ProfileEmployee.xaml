@@ -1,0 +1,72 @@
+﻿<Window x:Class="PRN212_Project_Team9.ProfileEmployee"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PRN212_Project_Team9"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d"
+        Title="ProfileEmployee" Height="700" Width="1000">
+    <Grid Background="#F4F5F7" Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2.6*"/>
+            <RowDefinition Height="0.5*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="20,20,20,20">
+            <Image Source="/Image/profile.png" Width="140" Height="120" Stretch="Uniform">
+                <Image.Clip>
+                    <EllipseGeometry Center="62,59" RadiusX="46" RadiusY="46"/>
+                </Image.Clip>
+            </Image>
+
+            <TextBlock x:Name="txtEmployeeName" Text="Nguyễn Văn A" FontSize="24" FontWeight="Bold" Foreground="#333" HorizontalAlignment="Center"/>
+            <TextBlock Name="txtPosition" Text="Position: Admin" FontSize="18" Foreground="#666" HorizontalAlignment="Center"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Margin="20,0,20,0" VerticalAlignment="Center" Height="265">
+            <TextBlock Text="Employee Information" FontSize="20" FontWeight="Bold" Foreground="#333" Margin="0,0,0,10"/>
+            <Border BorderBrush="#CCCCCC" BorderThickness="1" CornerRadius="5">
+
+                <Grid Height="189">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="170"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border BorderBrush="#CCCCCC" BorderThickness="0,0,1,0" Grid.Row="0" Grid.Column="0" Grid.RowSpan="5" Margin="0,0,10,0"/>
+                    <Border BorderBrush="#CCCCCC" BorderThickness="0,0,0,1" Grid.Row="0" Grid.ColumnSpan="2"  />
+                    <Border BorderBrush="#CCCCCC" BorderThickness="0,0,0,1" Grid.Row="1" Grid.ColumnSpan="2"  />
+                    <Border BorderBrush="#CCCCCC" BorderThickness="0,0,0,1" Grid.Row="2" Grid.ColumnSpan="2"  />
+                    <Border BorderBrush="#CCCCCC" BorderThickness="0,0,0,1" Grid.Row="3" Grid.ColumnSpan="2"  />
+
+                    <TextBlock Text="Employee ID:" FontWeight="Bold" Foreground="#666" Grid.Row="0" Grid.Column="0" FontSize="18" Margin="10,0,0,0"/>
+                    <TextBlock x:Name="txtEmployeeId" Text="EMP001" Foreground="#333" Grid.Row="0" Grid.Column="1" FontSize="16"/>
+
+                    <TextBlock Text="Phone Number:" FontWeight="Bold" Foreground="#666" Grid.Column="0" FontSize="18" Margin="10,0,0,37" Grid.RowSpan="2" Grid.Row="1"/>
+                    <TextBlock x:Name="txtPhoneNumber" Text="0123456789" Foreground="#333" Grid.Row="1" Grid.Column="1" FontSize="16"/>
+
+                    <TextBlock Text="Account:" FontWeight="Bold" Foreground="#666" Grid.Row="2" Grid.Column="0" FontSize="18" Margin="10,0,0,0"/>
+                    <TextBlock x:Name="txtAccount" Text="User01" Foreground="#333" Grid.Row="2" Grid.Column="1" FontSize="16"/>
+
+                    <TextBlock Text="Password:" FontWeight="Bold" Foreground="#666" Grid.Row="3" Grid.Column="0" FontSize="18" Margin="10,0,0,0"/>
+                    <PasswordBox x:Name="txtPassword" Password="******" Foreground="#333" Grid.Row="3" Grid.Column="1" FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}"/>
+                    
+                    <TextBlock Text="Hire Date:" FontWeight="Bold" Foreground="#666" Grid.Row="4" Grid.Column="0" FontSize="18" Margin="10,0,0,0"/>
+                    <TextBlock x:Name="txtHireDate" Text="01/01/2024" Foreground="#333" Grid.Row="4" Grid.Column="1" FontSize="16"/>
+                </Grid>
+            </Border>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20">
+            <Button x:Name="btnEdit" Content="Edit"  Width="100" Height="30" Margin="10,0" Click="btnEdit_Click"/>
+            <Button x:Name="btnSave" Content="Save" Width="100" Height="30" Margin="10,0" Click="btnSave_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

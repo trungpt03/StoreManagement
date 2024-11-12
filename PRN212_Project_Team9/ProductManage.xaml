@@ -1,0 +1,136 @@
+﻿<Window x:Class="PRN212_Project_Team9.ProductManage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PRN212_Project_Team9"
+        mc:Ignorable="d"
+        Title="Product Manage" Height="770" Width="1500" WindowStartupLocation="CenterScreen" FontSize="20">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="520"/>
+        </Grid.ColumnDefinitions>
+
+
+        <WrapPanel Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="30,0,0,0" Width="871">
+            <TextBlock FontSize="32" FontWeight="DemiBold" VerticalAlignment="Center" Background="Gray" Width="280" Padding="10">Product Manage</TextBlock>
+            <WrapPanel Margin="5">
+                <TextBox x:Name="txtSearch" Width="400" Margin="50,0,0,0"/>
+                <Button x:Name="btnSearch" Width="100" Height="30" Margin="10,0,0,0" Click="btnSearch_Click">Search</Button>
+            </WrapPanel>
+        </WrapPanel>
+        <WrapPanel Grid.Row="0" Grid.Column="2" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Right" Background="YellowGreen">
+            <Button Name="btnLogout"  Content="LOGOUT" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Red" FontWeight="Bold" HorizontalAlignment="Center" Click="btnLogout_Click"/>
+        </WrapPanel>
+        <StackPanel Grid.Column="0" Grid.Row="1" Margin="10">
+            <Button Name="btnBackToMenu"  Content="Back" Background="Gray" BorderBrush="{x:Null}" Foreground="Red" FontWeight="Bold" HorizontalAlignment="Center" Width="60" Height="40" Click="btnBackToMenu_Click"/>
+        </StackPanel>
+
+        <Border Grid.Column="2" Grid.Row="1" BorderThickness="2" BorderBrush="Gray" CornerRadius="5" Padding="10" Margin="5" Width="465">
+            <StackPanel>
+
+                <WrapPanel Margin="5">
+                    <TextBlock Width="160" >Product ID</TextBlock>
+                    <TextBox x:Name="txtProductID" Width="160" BorderThickness="0" IsEnabled="False" FontSize="22"/>
+                </WrapPanel>
+
+
+                <StackPanel Margin="5">
+                    <TextBlock>Product Name</TextBlock>
+                    <TextBox x:Name="txtProductName" Width="420" HorizontalAlignment="Left" BorderThickness="2"/>
+                </StackPanel>
+
+
+                <StackPanel Margin="5">
+                    <TextBlock>Category</TextBlock>
+                    <ComboBox x:Name="cbCategory" Width="420" HorizontalAlignment="Left" BorderThickness="2" Height="33"/>
+                </StackPanel>
+
+                <WrapPanel>
+                    <StackPanel Margin="5,5,30,5">
+                        <TextBlock>Price</TextBlock>
+                        <TextBox x:Name="txtPrice" Width="100" BorderThickness="2"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="0,5,30,5">
+                        <TextBlock>Quantity</TextBlock>
+                        <TextBox x:Name="txtQuantity" Width="100" BorderThickness="2" IsEnabled="False"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="0,5,0,5">
+                        <TextBlock>Import/Export</TextBlock>
+                        <WrapPanel>
+                            <TextBox x:Name="txtImport" Width="80" BorderThickness="2"/>
+                            <Button x:Name="btnImport" Width="25" Height="30" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="btnImport_Click" Margin="5,0,5,0">+</Button>
+                            <Button x:Name="btnExport" Width="25" Height="30" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="btnExport_Click">-</Button>
+                        </WrapPanel>
+                    </StackPanel>
+                    
+                </WrapPanel>
+
+                <StackPanel HorizontalAlignment="Left" Margin="5">
+                    <TextBlock>Description</TextBlock>
+                    <TextBox x:Name="txtDescription" Width="420" Height="80" BorderThickness="2" TextWrapping="Wrap"/>
+                </StackPanel>
+
+
+                <WrapPanel>
+                    <Button x:Name="btnRefresh" Width="90" Height="30" Margin="10" Click="btnRefresh_Click">REFRESH</Button>
+                    <Button x:Name="btnAdd" Width="90" Height="30" Margin="10" Click="btnAdd_Click">ADD</Button>
+                    <Button x:Name="btnUpdate" Width="90" Height="30" Margin="10" Click="btnUpdate_Click">UPDATE</Button>
+                    <Button x:Name="btnDelete" Width="90" Height="30" Margin="10" Click="btnDelete_Click">DELETE</Button>
+                </WrapPanel>
+            </StackPanel>
+        </Border>
+
+        <Border Grid.Column="2" Grid.Row="2" BorderThickness="2" BorderBrush="Gray" CornerRadius="5" Padding="10" Margin="10" HorizontalAlignment="Center">
+            <StackPanel>
+                <TextBox x:Name="txtCategoryId" Visibility="Collapsed"/>
+                <TextBlock FontSize="25" FontWeight="DemiBold" Margin="0,0,0,15">Category</TextBlock>
+                <TextBlock Margin="0,0,0,10">Category Name</TextBlock>
+                <TextBox x:Name="txtCategoryName" Width="440" Margin="0,0,0,15" />
+                <WrapPanel HorizontalAlignment="Center">
+                    <Button x:Name="btnRefreshCategory"  Margin="10" Width="90" Click="btnRefreshCategory_Click" >REFRESH</Button>
+                    <Button x:Name="btnAddCategory"  Margin="10" Width="80" Click="btnAddCategory_Click" >ADD</Button>
+                    <Button x:Name="btnUpdateCategory"  Margin="10" Width="90" Click="btnUpdateCategory_Click" >UPDATE</Button>
+                    <Button x:Name="btnDeleteCategory"  Margin="10" Width="90" Click="btnDeleteCategory_Click" >DELETE</Button>
+                </WrapPanel>
+            </StackPanel>
+        </Border>
+
+        <ListView x:Name="lvCategory" Grid.Column="1" Grid.Row="2" Margin="5" SelectionChanged="lvCategory_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" Width="50" DisplayMemberBinding="{Binding Path=CategoryID}"/>
+                    <GridViewColumn Header="Category Name" Width="auto" DisplayMemberBinding="{Binding Path=CategoryName}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+
+        <ListView x:Name="lvProduct" Grid.Column="1" Grid.Row="1" Margin="5" SelectionChanged="lvProduct_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" Width="auto" DisplayMemberBinding="{Binding Path=ProductID}"/>
+                    <GridViewColumn Header="Product Name" Width="auto" DisplayMemberBinding="{Binding Path=ProductName}"/>
+                    <GridViewColumn Header="Category" Width="auto" DisplayMemberBinding="{Binding Path=Category}"/>
+                    <GridViewColumn Header="Price" Width="90" DisplayMemberBinding="{Binding Path=Price}"/>
+                    <GridViewColumn Header="Quantity" Width="auto" DisplayMemberBinding="{Binding Path=Quantity}"/>
+                    <GridViewColumn Header="Description" Width="auto" DisplayMemberBinding="{Binding Path=Description}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+
+
+
+
+    </Grid>
+</Window>

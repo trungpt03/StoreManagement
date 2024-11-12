@@ -1,0 +1,49 @@
+﻿<Window x:Class="PRN212_Project_Team9.Discounts"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Discounts" Height="450" Width="800">
+    <Grid>
+        <ComboBox x:Name="cbSearchBy" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="DiscountID"/>
+            <ComboBoxItem Content="DiscountName"/>
+            <ComboBoxItem Content="Percentage"/>
+        </ComboBox>
+        <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Margin="140,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="350,10,0,0" VerticalAlignment="Top" Width="60" Click="btnSearch_Click"/>
+
+        <ListView x:Name="lvDiscount" Margin="0,45,252,0" SelectionChanged="lvDiscount_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" Width="30" DisplayMemberBinding="{Binding DiscountId}"/>
+                    <GridViewColumn Header="Name" Width="120" DisplayMemberBinding="{Binding DiscountName}"/>
+                    <GridViewColumn Header="Percentage" Width="80" DisplayMemberBinding="{Binding DiscountPercentage}"/>
+                    <GridViewColumn Header="Start Date" Width="100" DisplayMemberBinding="{Binding StartDate}"/>
+                    <GridViewColumn Header="End Date" Width="100" DisplayMemberBinding="{Binding EndDate}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Label Content="Discount" HorizontalAlignment="Left" Margin="623,10,0,0" VerticalAlignment="Top" Height="36" Width="112" FontSize="20"/>
+
+        <Label Content="ID" HorizontalAlignment="Left" Margin="608,55,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbDiscountId" HorizontalAlignment="Left" Margin="608,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+
+        <Label Content="Name" HorizontalAlignment="Left" Margin="608,104,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbDiscountName" HorizontalAlignment="Left" Margin="608,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+
+        <Label Content="Percentage" HorizontalAlignment="Left" Margin="608,153,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbDiscountPercentage" HorizontalAlignment="Left" Margin="608,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+
+        <Label Content="Start Date" HorizontalAlignment="Left" Margin="608,192,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="dpStartDate" HorizontalAlignment="Left" Margin="608,218,0,0" VerticalAlignment="Top" Width="120"/>
+
+        <Label Content="End Date" HorizontalAlignment="Left" Margin="608,241,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="dpEndDate" HorizontalAlignment="Left" Margin="608,267,0,0" VerticalAlignment="Top" Width="120"/>
+
+        <Button x:Name="Refresh" Content="Refresh" HorizontalAlignment="Left" Margin="588,301,0,0" VerticalAlignment="Top" Click="Refresh_Click"/>
+        <Button x:Name="Add" Content="Add" HorizontalAlignment="Left" Margin="668,301,0,0" VerticalAlignment="Top" Width="60" Click="Add_Click"/>
+        <Button x:Name="Update" Content="Update" HorizontalAlignment="Left" Margin="588,341,0,0" VerticalAlignment="Top" Width="60" Click="Update_Click"/>
+        <Button x:Name="Delete" Content="Delete" HorizontalAlignment="Left" Margin="668,341,0,0" VerticalAlignment="Top" Width="60" Click="Delete_Click"/>
+        <Button x:Name="btnProductDiscount" Content="Product Discounts" HorizontalAlignment="Left" Margin="588,381,0,0" VerticalAlignment="Top" Width="140" Click="btnProductDiscount_Click"/>
+    </Grid>
+</Window>

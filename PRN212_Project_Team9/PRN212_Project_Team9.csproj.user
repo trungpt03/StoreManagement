@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Admin\Admin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ChartReport\CharCustomer.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ChartReport\ChartEmployee.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Admin\Customer.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Admin\CustomerPoint.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Admin\Employees.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Admin\LoyaltyPrograms.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="HomeScreen\EditProfile.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="OrderForCustomer.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="HomeScreen\ProfileEmployee.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ReportAll\ReportCustomer.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ReportAll\ReportEmployee.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="HomeScreen\TaskEmployee.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Admin\Admin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ChartReport\CharCustomer.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ChartReport\ChartEmployee.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Admin\Customer.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Admin\CustomerPoint.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Admin\Employees.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Admin\LoyaltyPrograms.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="HomeScreen\EditProfile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="OrderForCustomer.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="HomeScreen\ProfileEmployee.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ReportAll\ReportCustomer.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ReportAll\ReportEmployee.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="HomeScreen\TaskEmployee.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>
